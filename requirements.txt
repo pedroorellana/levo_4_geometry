@@ -1,0 +1,9 @@
+# The levo_geo package itself is stdlib-only and needs none of this:
+#     python3 -m levo_geo          # run the self-test
+#     python3 -m levo_geo.export   # write output/*.csv
+#
+# These are only for running notebooks/levo4_s4_geometry.ipynb:
+#     python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+jupyter
+pandas
+matplotlib
