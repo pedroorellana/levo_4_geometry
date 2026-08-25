@@ -27,7 +27,7 @@ The `levo_geo` package is **stdlib-only** — no virtualenv needed:
 
 ```sh
 python3 -m levo_geo          # run the full self-test
-python3 -m levo_geo.export   # (re)write output/*.csv
+python3 -m levo_geo.export   # (re)write output/*.csv and the tables in this README
 ```
 
 ```python
@@ -56,7 +56,7 @@ levo_geo/           stdlib-only calculator
   data.py           source data: geometry charts, manual specs, published deltas
   calibrate.py      fits each adjustment to the manual's published deltas
   configs.py        enumerates the 24 + 12 combinations; self_test()
-  export.py         CSV writer
+  export.py         CSV + README table writer
 notebooks/
   levo4_s4_geometry.ipynb   the analysis, executed with all outputs
 output/             36 configurations x 14 geometry columns, static and at sag
@@ -88,6 +88,64 @@ Columns: the four configuration choices and `fork_a2c` / `is_stock`, then the 14
 Values are reported as `published baseline + modelled delta`, so **the stock row is identical to the
 catalogue chart** and every other row differs from it by a physically derived amount. That keeps the
 sub-millimetre rounding slop in the published (and over-determined) chart out of the other 35 rows.
+
+## Full results
+
+Static, unweighted numbers — the same convention as the catalogue chart, and not the geometry
+anyone actually rides. The sagged tables are in [output/](output/) and the notebook. Regenerate this
+block with `python3 -m levo_geo.export`.
+
+<!-- BEGIN GENERATED: static-tables -->
+
+### Levo 4 — all 24 configurations (mm and degrees)
+
+| Stock | Fork | Horst | Cup | Shock ext | HTA | STA † | BB height | BB drop † | Reach † | Stack † | CS | WB † | FC † | Trail † | Mech trail † | Flop † | ETT † | Standover †* |
+|---|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|  | 160 | Short | -1 deg | Short | 63.50 | 77.30 | 347.7 | 31.8 | 483.4 | 635.5 | 435.0 | 1265.5 | 831.6 | 139.8 | 125.1 | 55.8 | 626.2 | 751.2 |
+|  | 160 | Short | -1 deg | Long | 63.91 | 77.71 | 353.6 | 25.9 | 487.9 | 632.0 | 433.0 | 1263.7 | 831.6 | 136.6 | 122.7 | 53.9 | 625.3 | 757.8 |
+| **stock** | 160 | Short | 0 deg | Short | 64.50 | 77.00 | 350.0 | 29.5 | 480.0 | 638.0 | 435.0 | 1254.0 | 820.0 | 132.0 | 119.1 | 51.3 | 627.0 | 753.0 |
+|  | 160 | Short | 0 deg | Long | 64.91 | 77.41 | 355.9 | 23.6 | 484.6 | 634.5 | 433.0 | 1252.2 | 820.0 | 128.8 | 116.7 | 49.5 | 626.0 | 759.6 |
+|  | 160 | Short | +1 deg | Short | 65.50 | 76.71 | 352.2 | 27.3 | 476.7 | 640.5 | 435.0 | 1242.5 | 808.4 | 124.3 | 113.1 | 46.9 | 627.7 | 754.7 |
+|  | 160 | Short | +1 deg | Long | 65.92 | 77.12 | 358.1 | 21.4 | 481.4 | 637.0 | 433.0 | 1240.6 | 808.4 | 121.2 | 110.6 | 45.1 | 626.7 | 761.3 |
+|  | 160 | Long | -1 deg | Short | 62.68 | 76.48 | 335.8 | 43.7 | 474.2 | 642.3 | 446.0 | 1275.7 | 831.6 | 146.3 | 129.9 | 59.6 | 628.3 | 737.9 |
+|  | 160 | Long | -1 deg | Long | 63.08 | 76.89 | 341.7 | 37.8 | 478.7 | 639.0 | 443.6 | 1273.8 | 831.6 | 143.1 | 127.6 | 57.7 | 627.3 | 744.5 |
+|  | 160 | Long | 0 deg | Short | 63.67 | 76.17 | 338.2 | 41.3 | 470.7 | 644.9 | 446.0 | 1264.3 | 820.0 | 138.4 | 124.1 | 55.0 | 629.2 | 739.8 |
+|  | 160 | Long | 0 deg | Long | 64.08 | 76.58 | 344.0 | 35.5 | 475.3 | 641.5 | 443.6 | 1262.3 | 820.0 | 135.2 | 121.6 | 53.2 | 628.1 | 746.3 |
+|  | 160 | Long | +1 deg | Short | 64.67 | 75.87 | 340.5 | 39.0 | 467.4 | 647.3 | 446.0 | 1252.9 | 808.4 | 130.7 | 118.1 | 50.5 | 630.0 | 741.6 |
+|  | 160 | Long | +1 deg | Long | 65.08 | 76.29 | 346.3 | 33.2 | 472.0 | 643.9 | 443.6 | 1250.8 | 808.4 | 127.5 | 115.7 | 48.7 | 628.9 | 748.1 |
+|  | 170 | Short | -1 deg | Short | 63.10 | 76.90 | 350.8 | 28.7 | 478.9 | 638.9 | 435.0 | 1269.8 | 835.7 | 143.0 | 127.5 | 57.7 | 627.3 | 753.6 |
+|  | 170 | Short | -1 deg | Long | 63.50 | 77.31 | 356.7 | 22.8 | 483.4 | 635.4 | 433.0 | 1267.9 | 835.7 | 139.7 | 125.1 | 55.8 | 626.2 | 760.2 |
+|  | 170 | Short | 0 deg | Short | 64.09 | 76.59 | 353.1 | 26.4 | 475.4 | 641.4 | 435.0 | 1258.1 | 824.0 | 135.2 | 121.6 | 53.1 | 628.1 | 755.4 |
+|  | 170 | Short | 0 deg | Long | 64.50 | 77.00 | 359.0 | 20.5 | 480.0 | 638.0 | 433.0 | 1256.2 | 824.0 | 132.0 | 119.1 | 51.3 | 627.0 | 762.0 |
+|  | 170 | Short | +1 deg | Short | 65.08 | 76.29 | 355.4 | 24.1 | 472.0 | 643.9 | 435.0 | 1246.4 | 812.3 | 127.5 | 115.7 | 48.7 | 628.8 | 757.2 |
+|  | 170 | Short | +1 deg | Long | 65.50 | 76.70 | 361.3 | 18.2 | 476.7 | 640.5 | 433.0 | 1244.5 | 812.3 | 124.4 | 113.2 | 46.9 | 627.8 | 763.8 |
+|  | 170 | Long | -1 deg | Short | 62.28 | 76.08 | 338.9 | 40.6 | 469.7 | 645.6 | 446.0 | 1280.1 | 835.7 | 149.4 | 132.3 | 61.5 | 629.4 | 740.4 |
+|  | 170 | Long | -1 deg | Long | 62.68 | 76.49 | 344.8 | 34.7 | 474.3 | 642.3 | 443.6 | 1278.1 | 835.7 | 146.2 | 129.9 | 59.6 | 628.3 | 746.9 |
+|  | 170 | Long | 0 deg | Short | 63.27 | 75.77 | 341.3 | 38.2 | 466.2 | 648.2 | 446.0 | 1268.6 | 824.0 | 141.6 | 126.5 | 56.9 | 630.3 | 742.3 |
+|  | 170 | Long | 0 deg | Long | 63.67 | 76.17 | 347.2 | 32.3 | 470.8 | 644.9 | 443.6 | 1266.5 | 824.0 | 138.4 | 124.1 | 55.0 | 629.2 | 748.8 |
+|  | 170 | Long | +1 deg | Short | 64.26 | 75.46 | 343.7 | 35.8 | 462.7 | 650.7 | 446.0 | 1257.0 | 812.3 | 133.9 | 120.6 | 52.4 | 631.1 | 744.1 |
+|  | 170 | Long | +1 deg | Long | 64.67 | 75.87 | 349.5 | 30.0 | 467.4 | 647.3 | 443.6 | 1254.9 | 812.3 | 130.7 | 118.2 | 50.6 | 630.0 | 750.6 |
+
+### Levo 4 EVO — all 12 configurations (mm and degrees)
+
+| Stock | Fork | Horst | Cup | Shock ext | HTA | STA † | BB height | BB drop † | Reach † | Stack † | CS | WB † | FC † | Trail † | Mech trail † | Flop † | ETT † | Standover †* |
+|---|---:|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+|  | 170 | Short | -1 deg | n/a | 63.00 | 76.72 | 350.5 | 29.5 | 478.1 | 640.0 | 435.0 | 1270.6 | 835.8 | 143.7 | 128.0 | 58.1 | 628.1 | 758.8 |
+|  | 170 | Short | 0 deg | n/a | 64.01 | 76.41 | 352.9 | 27.1 | 474.6 | 642.6 | 435.0 | 1258.8 | 823.9 | 135.8 | 122.1 | 53.5 | 628.9 | 760.6 |
+|  | 170 | Short | +1 deg | n/a | 65.02 | 76.10 | 355.2 | 24.8 | 471.2 | 645.2 | 435.0 | 1246.9 | 812.0 | 128.0 | 116.1 | 49.0 | 629.7 | 762.4 |
+|  | 170 | Long | -1 deg | n/a | 62.18 | 75.90 | 338.5 | 41.5 | 468.9 | 646.8 | 446.0 | 1280.7 | 835.8 | 150.3 | 132.9 | 62.0 | 630.3 | 745.4 |
+|  | 170 | Long | 0 deg | n/a | 63.18 | 75.58 | 341.0 | 39.0 | 465.3 | 649.4 | 446.0 | 1269.0 | 823.9 | 142.3 | 127.0 | 57.3 | 631.2 | 747.3 |
+|  | 170 | Long | +1 deg | n/a | 64.18 | 75.27 | 343.4 | 36.6 | 461.7 | 652.0 | 446.0 | 1257.3 | 812.0 | 134.5 | 121.0 | 52.7 | 632.0 | 749.1 |
+|  | 180 | Short | -1 deg | n/a | 62.60 | 76.32 | 353.6 | 26.4 | 473.6 | 643.3 | 435.0 | 1275.0 | 840.0 | 146.9 | 130.4 | 60.0 | 629.1 | 761.1 |
+| **stock** | 180 | Short | 0 deg | n/a | 63.60 | 76.00 | 356.0 | 24.0 | 470.0 | 646.0 | 435.0 | 1263.0 | 828.0 | 139.0 | 124.5 | 55.4 | 630.0 | 763.0 |
+|  | 180 | Short | +1 deg | n/a | 64.60 | 75.69 | 358.4 | 21.6 | 466.5 | 648.6 | 435.0 | 1251.0 | 815.9 | 131.2 | 118.5 | 50.8 | 630.9 | 764.8 |
+|  | 180 | Long | -1 deg | n/a | 61.78 | 75.51 | 341.6 | 38.4 | 464.4 | 650.0 | 446.0 | 1285.3 | 840.0 | 153.4 | 135.2 | 63.9 | 631.4 | 747.7 |
+|  | 180 | Long | 0 deg | n/a | 62.78 | 75.18 | 344.1 | 35.9 | 460.7 | 652.7 | 446.0 | 1273.4 | 828.0 | 145.5 | 129.4 | 59.2 | 632.3 | 749.7 |
+|  | 180 | Long | +1 deg | n/a | 63.77 | 74.86 | 346.6 | 33.4 | 457.1 | 655.2 | 446.0 | 1261.5 | 815.9 | 137.6 | 123.5 | 54.6 | 633.2 | 751.5 |
+
+† not published by Specialized for any adjustment. \* standover is indicative only — see [Assumptions and limitations](#assumptions-and-limitations).
+
+<!-- END GENERATED: static-tables -->
 
 ## What the manual doesn't tell you
 
